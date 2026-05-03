@@ -6,6 +6,7 @@ import { ArrowLeft, ArrowRight, Check, Phone } from 'lucide-react';
 import { AnnouncementBar } from '@/components/site/AnnouncementBar';
 import { SiteHeader } from '@/components/site/SiteHeader';
 import { SiteFooter } from '@/components/site/SiteFooter';
+import { BreadcrumbJsonLd, ServiceJsonLd } from '@/components/site/JsonLd';
 import { SERVICES, getService, type ServiceSlug } from '@/lib/services-config';
 import { routing } from '@/i18n/routing';
 
@@ -49,8 +50,25 @@ export default async function ServiceDetail({ params }: PageProps<'/[locale]/ser
   const includes = t.raw(`${cfg.msgKey}Includes`) as string[];
   const ideal = t.raw(`${cfg.msgKey}Ideal`) as string[];
 
+  const tNav = await getTranslations('Nav');
+  const title = t(`${cfg.msgKey}Title`);
+  const subtitle = t(`${cfg.msgKey}Subtitle`);
+
   return (
     <>
+      <ServiceJsonLd
+        name={title}
+        description={subtitle}
+        slug={slug}
+        locale={locale as 'el' | 'en'}
+      />
+      <BreadcrumbJsonLd
+        items={[
+          { name: tNav('home'), href: localePrefix || '/' },
+          { name: tNav('services'), href: `${localePrefix}/services` },
+          { name: title, href: `${localePrefix}/services/${slug}` },
+        ]}
+      />
       <AnnouncementBar />
       <SiteHeader />
       <main className="flex-1">

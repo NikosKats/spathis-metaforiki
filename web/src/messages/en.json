@@ -114,6 +114,15 @@
     "ctaPrimary": "Get a quote",
     "ctaSecondary": "Call us"
   },
+  "Blog": {
+    "eyebrow": "News",
+    "title": "News and updates",
+    "subtitle": "Announcements, new services, and stories from our routes.",
+    "readMore": "Read more",
+    "back": "Back to news",
+    "empty": "No posts yet. Check back soon.",
+    "publishedOn": "Published on"
+  },
   "About": {
     "eyebrow": "About us",
     "title": "A new logistics company, built around Kefalonia",

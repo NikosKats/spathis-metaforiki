@@ -31,3 +31,4 @@ Thumbs.db
 # Cloudflare (wrangler local state, OpenNext build output)
 .wrangler/
 .open-next/
+.dry/
