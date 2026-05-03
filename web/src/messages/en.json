@@ -3,47 +3,121 @@
     "siteName": "SPATHIS — Kefalonia Logistics",
     "tagline": "Full loads, containers, tractor haulage. To and from Kefalonia."
   },
+  "Announcement": {
+    "text": "A new logistics company in Kefalonia — handling all freight to and from the island.",
+    "cta": "Get a quote"
+  },
   "Nav": {
     "home": "Home",
     "services": "Services",
     "routes": "Routes",
+    "process": "Process",
     "about": "About",
     "blog": "News",
     "contact": "Contact",
-    "quote": "Get a quote"
+    "quote": "Get a quote",
+    "callNow": "Call now"
   },
-  "Home": {
-    "heroEyebrow": "A new logistics company in Kefalonia",
-    "heroTitle": "Reliable logistics for the island",
-    "heroSubtitle": "Full loads, containers and tractor haulage — to and from Kefalonia.",
+  "Hero": {
+    "eyebrow": "Kefalonia Logistics",
+    "title": "Reliable logistics for Kefalonia",
+    "titleAccent": "for Kefalonia",
+    "subtitle": "Full loads, containers and tractor haulage to and from the island. With the consistency you'd expect from a partner you can rely on.",
     "ctaPrimary": "Get a quote",
-    "ctaSecondary": "Contact us"
+    "ctaSecondary": "See services"
+  },
+  "Trust": {
+    "label": "Serving the main ports and hubs",
+    "routes": ["Athens → Kefalonia", "Patras → Kefalonia", "Thessaloniki → Kefalonia", "Igoumenitsa → Kefalonia", "Kefalonia → Athens", "Kefalonia → Patras"]
   },
   "Services": {
-    "title": "Services",
-    "subtitle": "Everything you need to move freight to the island",
-    "fullLoads": "Full Loads",
-    "containers": "Containers",
-    "haulage": "Tractor Haulage"
+    "eyebrow": "What we do",
+    "title": "A full range of services for every load",
+    "subtitle": "From full loads to containers and tractor haulage — we move your cargo with responsibility and transparency.",
+    "fullLoadsTitle": "Full Loads",
+    "fullLoadsDesc": "FTL transport with insured trucks. Ideal for large or sensitive freight bound for the island.",
+    "containersTitle": "Containers",
+    "containersDesc": "Container transport of all standard types. Coordinating from/to the port; customs clearance arranged on request.",
+    "haulageTitle": "Tractor Haulage",
+    "haulageDesc": "Tractor haulage services for heavy or specialised loads. Modern equipment, experienced drivers.",
+    "learnMore": "Learn more"
   },
-  "Contact": {
-    "title": "Contact",
-    "phone": "Phone",
-    "email": "Email",
-    "address": "Address",
-    "hours": "Hours",
-    "addressValue": "Skala, Kefalonia, Greece",
-    "hoursValue": "Mon–Sat 8:00–20:00",
-    "callPrimary": "Call us",
-    "writeUs": "Send us a message",
-    "name": "Full name",
-    "message": "Message",
-    "send": "Send"
+  "Process": {
+    "eyebrow": "How we work",
+    "title": "From quote to delivery in 4 steps",
+    "step1Title": "You request a quote",
+    "step1Desc": "Fill in the form or call us. Tell us what, where from and where to.",
+    "step2Title": "Confirmation",
+    "step2Desc": "We send you the price and schedule the same or next business day.",
+    "step3Title": "Pickup",
+    "step3Desc": "We coordinate the pickup of your freight and the ferry crossing.",
+    "step4Title": "Delivery",
+    "step4Desc": "We deliver to the final destination with confirmation of receipt."
+  },
+  "Routes": {
+    "eyebrow": "Where we operate",
+    "title": "Connecting Kefalonia with mainland Greece",
+    "subtitle": "Daily routes to and from all major ports.",
+    "from": "From",
+    "to": "To",
+    "transitTime": "Transit time"
+  },
+  "Stats": {
+    "eyebrow": "At a glance",
+    "title": "Consistency, by the numbers",
+    "vehiclesNumber": "10+",
+    "vehiclesLabel": "Modern vehicles",
+    "routesNumber": "20+",
+    "routesLabel": "Routes per week",
+    "yearsNumber": "20+",
+    "yearsLabel": "Years of experience",
+    "ontimeNumber": "98%",
+    "ontimeLabel": "On-time delivery"
+  },
+  "QuoteCTA": {
+    "eyebrow": "Get a quote",
+    "title": "Ready to move your freight?",
+    "subtitle": "Send us the details and we'll come back with a price the same or next business day.",
+    "primary": "Get a quote now",
+    "secondary": "Call us"
+  },
+  "FAQ": {
+    "eyebrow": "Frequently asked",
+    "title": "Questions we hear often",
+    "items": [
+      {
+        "q": "How fast can you take on a shipment?",
+        "a": "In most cases within 24 to 48 hours of confirmation. Heavy or specialised loads may need a little extra planning."
+      },
+      {
+        "q": "Do you cover all of mainland Greece?",
+        "a": "Yes. We run daily routes from/to Athens, Patras, Thessaloniki and Igoumenitsa, and handle ad-hoc routes on request."
+      },
+      {
+        "q": "Do you collect containers directly from the port?",
+        "a": "Yes. We coordinate with the port and handle pickup and transport of containers of all standard types."
+      },
+      {
+        "q": "Is the cargo insured?",
+        "a": "All vehicles are insured. For high-value freight we recommend additional cargo insurance and we arrange it for you."
+      },
+      {
+        "q": "How do I pay?",
+        "a": "Bank transfer, cash on delivery, or credit on agreement for repeat customers."
+      }
+    ]
   },
   "Footer": {
+    "tagline": "A new logistics company based in Skala, Kefalonia. Full loads, containers, tractor haulage.",
+    "company": "Company",
+    "services": "Services",
+    "contact": "Contact",
+    "legal": "Legal",
     "rights": "All rights reserved.",
     "privacy": "Privacy Policy",
-    "terms": "Terms of Service"
+    "terms": "Terms of Service",
+    "address": "Skala, Kefalonia, Greece",
+    "hours": "Mon–Sat 8:00–20:00"
   },
   "LangSwitcher": {
     "el": "Ελληνικά",
