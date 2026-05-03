@@ -1,9 +1,9 @@
 import './globals.css';
 import type { Metadata } from 'next';
-import { Geist, Geist_Mono } from 'next/font/google';
+import { Inter, JetBrains_Mono } from 'next/font/google';
 
-const geistSans = Geist({ variable: '--font-geist-sans', subsets: ['latin', 'greek'] });
-const geistMono = Geist_Mono({ variable: '--font-geist-mono', subsets: ['latin', 'greek'] });
+const inter = Inter({ variable: '--font-geist-sans', subsets: ['latin', 'greek'], display: 'swap' });
+const jetbrainsMono = JetBrains_Mono({ variable: '--font-geist-mono', subsets: ['latin'], display: 'swap' });
 
 export const metadata: Metadata = {
   metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL ?? 'https://spathismetaforiki.gr'),
@@ -13,7 +13,7 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}>
+    <html className={`${inter.variable} ${jetbrainsMono.variable} h-full antialiased`}>
       <body className="min-h-full flex flex-col bg-background text-foreground">{children}</body>
     </html>
   );
