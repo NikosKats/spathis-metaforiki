@@ -27,3 +27,7 @@ Thumbs.db
 *.tsbuildinfo
 .turbo/
 .cache/
+
+# Cloudflare (wrangler local state, OpenNext build output)
+.wrangler/
+.open-next/

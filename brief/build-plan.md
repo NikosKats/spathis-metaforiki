@@ -61,13 +61,23 @@ Phased plan. Each phase is a session's worth of work — we ship and review at e
 - [ ] Privacy policy + Terms (lawyer-light placeholders, client to review)
 
 ## Phase 7 — Deploy
-- [ ] Cloudflare Pages project + connect repo
-- [ ] `@cloudflare/next-on-pages` build
-- [ ] DNS: point `spathismetaforiki.gr` to Cloudflare
-- [ ] Email: configure Resend domain (SPF, DKIM, DMARC)
-- [ ] Cloudflare Web Analytics
-- [ ] Submit sitemap to Google Search Console
+- [x] OpenNext for Cloudflare adapter wired (`pnpm run deploy:cf`)
+- [x] Build + asset upload working (5.2 MB worker)
+- [ ] Client (`aspathis@hotmail.gr`) verifies Cloudflare email — gates final deploy
+- [ ] DNS: add `spathismetaforiki.gr` to Cloudflare, point to the Worker
+- [ ] Add EMD zone `metaforikikefalonias.gr` to Cloudflare; deploy `redirect-worker/`
+- [ ] Email: configure Resend domain (SPF, DKIM, DMARC) on `spathismetaforiki.gr`
+- [ ] Cloudflare Web Analytics on both zones
+- [ ] Submit sitemap to Google Search Console (primary only — EMD is non-canonical)
 - [ ] Test on real devices (iOS Safari, Android Chrome)
+
+## Phase 8 — SEO setup
+- [ ] Google Business Profile: claim, verify Skala address, services, photos, hours
+- [ ] Greek business directories: χρυσός οδηγός, vrisko.gr, biznet.gr (consistent NAP)
+- [ ] JSON-LD `MovingCompany` + `LocalBusiness` schema in root layout
+- [ ] Per-locale sitemap.xml + hreflang (`alternates.languages` already wired in layout metadata)
+- [ ] On-page Greek long-tail content: "μεταφορά εμπορευμάτων Κεφαλονιά", "containers Κεφαλονιά Πάτρα", "μεταφορική Αθήνα Κεφαλονιά"
+- [ ] Verify EMD redirect (`metaforikikefalonias.gr`) returns 301, not 302, and preserves path
 
 ## Out of scope (for now)
 - Driver/dispatcher portal

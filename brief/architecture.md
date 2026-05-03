@@ -11,7 +11,8 @@
 | Forms | React Hook Form + Zod | Type-safe, accessible, small bundle |
 | Hosting | Cloudflare Pages (`@cloudflare/next-on-pages`) | Cheap, fast, edge runtime, free Web Analytics |
 | Analytics | Cloudflare Web Analytics | Cookieless → no GDPR banner needed for tracking |
-| Domain | `spathismetaforiki.gr` | Cloudflare DNS |
+| Domain (primary) | `spathismetaforiki.gr` | Cloudflare DNS — brand-led canonical |
+| Domain (EMD redirect) | `metaforikikefalonias.gr` | 301 → primary via standalone Cloudflare Worker (`redirect-worker/`) |
 
 ## Languages
 - **Default:** `el` (Greek) — Greek-island business, .gr TLD, Greek primary audience
@@ -84,7 +85,7 @@ The PNG you shared needs to become an SVG. Two options:
 spathis-logistics/
 ├── brief/                    Briefs, architecture, content drafts
 ├── assets/                   Source assets (logo PNG, images)
-├── web/                      Next.js app (App Router)
+├── web/                      Next.js app (App Router) → spathismetaforiki.gr
 │   ├── src/
 │   │   ├── app/[locale]/     Localized public routes
 │   │   ├── app/admin/        Admin (not localized)
@@ -92,12 +93,22 @@ spathis-logistics/
 │   │   ├── components/
 │   │   ├── lib/              supabase client, resend client, utils
 │   │   ├── i18n/             next-intl config + messages
-│   │   └── messages/         el.json, en.json
+│   │   ├── messages/         el.json, en.json
+│   │   └── middleware.ts     next-intl locale routing (Edge runtime)
 │   └── public/
+├── redirect-worker/          Tiny Cloudflare Worker → metaforikikefalonias.gr
+│   └── src/index.ts          301s all paths to spathismetaforiki.gr
 └── supabase/
     ├── schema.sql            Tables + RLS policies
     └── seed.sql              Initial services / settings
 ```
+
+## Domain strategy
+- **Primary (canonical):** `spathismetaforiki.gr` — brand-led, all SEO equity accrues here
+- **EMD redirect:** `metaforikikefalonias.gr` → 301 to primary, preserving path + query
+  - Captures direct-type traffic for the high-volume Greek query "μεταφορική Κεφαλονιάς"
+  - Implemented as standalone Cloudflare Worker (`redirect-worker/`) attached to the EMD zone
+- Future EMD redirects (e.g. `metaforikikefalonia.gr`, `kefalonia-metaforiki.gr`) plug into the same Worker by adding routes in `redirect-worker/wrangler.jsonc`
 
 ## Env vars
 ```

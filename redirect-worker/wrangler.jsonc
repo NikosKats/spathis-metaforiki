@@ -1,0 +1,15 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "spathis-redirect",
+  "main": "src/index.ts",
+  "compatibility_date": "2026-04-01",
+  "observability": {
+    "enabled": true
+  },
+  // Routes are attached to the worker once metaforikikefalonias.gr is added
+  // as a Zone in Cloudflare. After that, uncomment and `pnpm exec wrangler deploy`.
+  // "routes": [
+  //   { "pattern": "metaforikikefalonias.gr/*", "zone_name": "metaforikikefalonias.gr" },
+  //   { "pattern": "www.metaforikikefalonias.gr/*", "zone_name": "metaforikikefalonias.gr" }
+  // ]
+}
