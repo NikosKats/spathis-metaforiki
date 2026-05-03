@@ -1,0 +1,29 @@
+# Node
+node_modules/
+.pnpm-debug.log*
+npm-debug.log*
+
+# Next.js (defense in depth — also covered by web/.gitignore)
+.next/
+out/
+
+# Env (only .env.example is committed)
+.env
+.env.local
+.env.*.local
+*/.env
+*/.env.local
+*/.env.*.local
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Editor
+.vscode/
+.idea/
+
+# Build/cache
+*.tsbuildinfo
+.turbo/
+.cache/

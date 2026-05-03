@@ -1,0 +1,52 @@
+{
+  "Meta": {
+    "siteName": "SPATHIS — Kefalonia Logistics",
+    "tagline": "Full loads, containers, tractor haulage. To and from Kefalonia."
+  },
+  "Nav": {
+    "home": "Home",
+    "services": "Services",
+    "routes": "Routes",
+    "about": "About",
+    "blog": "News",
+    "contact": "Contact",
+    "quote": "Get a quote"
+  },
+  "Home": {
+    "heroEyebrow": "A new logistics company in Kefalonia",
+    "heroTitle": "Reliable logistics for the island",
+    "heroSubtitle": "Full loads, containers and tractor haulage — to and from Kefalonia.",
+    "ctaPrimary": "Get a quote",
+    "ctaSecondary": "Contact us"
+  },
+  "Services": {
+    "title": "Services",
+    "subtitle": "Everything you need to move freight to the island",
+    "fullLoads": "Full Loads",
+    "containers": "Containers",
+    "haulage": "Tractor Haulage"
+  },
+  "Contact": {
+    "title": "Contact",
+    "phone": "Phone",
+    "email": "Email",
+    "address": "Address",
+    "hours": "Hours",
+    "addressValue": "Skala, Kefalonia, Greece",
+    "hoursValue": "Mon–Sat 8:00–20:00",
+    "callPrimary": "Call us",
+    "writeUs": "Send us a message",
+    "name": "Full name",
+    "message": "Message",
+    "send": "Send"
+  },
+  "Footer": {
+    "rights": "All rights reserved.",
+    "privacy": "Privacy Policy",
+    "terms": "Terms of Service"
+  },
+  "LangSwitcher": {
+    "el": "Ελληνικά",
+    "en": "English"
+  }
+}
