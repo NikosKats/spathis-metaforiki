@@ -6,10 +6,12 @@
   "observability": {
     "enabled": true
   },
-  // Routes are attached to the worker once metaforikikefalonias.gr is added
-  // as a Zone in Cloudflare. After that, uncomment and `pnpm exec wrangler deploy`.
-  // "routes": [
-  //   { "pattern": "metaforikikefalonias.gr/*", "zone_name": "metaforikikefalonias.gr" },
-  //   { "pattern": "www.metaforikikefalonias.gr/*", "zone_name": "metaforikikefalonias.gr" }
-  // ]
+  // Attached to metaforikikefalonias.gr once the zone is added on Cloudflare.
+  // The first deploy attempt before the zone is active will fail with a route
+  // validation error — that's expected. Until then, comment these out or
+  // deploy without them; they bind the moment the zone is registered.
+  "routes": [
+    { "pattern": "metaforikikefalonias.gr/*", "zone_name": "metaforikikefalonias.gr" },
+    { "pattern": "www.metaforikikefalonias.gr/*", "zone_name": "metaforikikefalonias.gr" }
+  ]
 }

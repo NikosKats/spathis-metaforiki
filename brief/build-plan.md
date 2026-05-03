@@ -61,13 +61,25 @@ Phased plan. Each phase is a session's worth of work — we ship and review at e
 - [ ] Privacy policy + Terms (lawyer-light placeholders, client to review)
 
 ## Phase 7 — Deploy
+
+### Client checklist (Σπάθης / `aspathis@hotmail.gr`)
+**These three actions unlock everything else and only the account owner can do them:**
+
+1. **Verify Cloudflare email** at https://dash.cloudflare.com/profile (look for "Resend verification email" if the original is lost). Until this is done, every Worker deploy attempt returns API error **10034**. Confirmed blocking as of 2026-05-04.
+2. **Add Cloudflare Sites** (free plan is fine):
+   - `spathismetaforiki.gr` (primary brand domain)
+   - `metaforikikefalonias.gr` (EMD redirect domain — bought 2026-05-04)
+3. **Update nameservers at the registrars** to the two Cloudflare nameservers shown after step 2. DNS propagation usually completes within an hour.
+
+### Agency checklist (after the above)
 - [x] OpenNext for Cloudflare adapter wired (`pnpm run deploy:cf`)
 - [x] Build + asset upload working (5.2 MB worker)
-- [ ] Client (`aspathis@hotmail.gr`) verifies Cloudflare email — gates final deploy
-- [ ] DNS: add `spathismetaforiki.gr` to Cloudflare, point to the Worker
-- [ ] Add EMD zone `metaforikikefalonias.gr` to Cloudflare; deploy `redirect-worker/`
-- [ ] Email: configure Resend domain (SPF, DKIM, DMARC) on `spathismetaforiki.gr`
-- [ ] Cloudflare Web Analytics on both zones
+- [x] Redirect worker code + wrangler config ready (routes pre-attached to `metaforikikefalonias.gr`)
+- [ ] `cd web && pnpm run deploy:cf` — main app to Cloudflare Workers
+- [ ] `cd redirect-worker && pnpm run deploy` — 301-redirect worker
+- [ ] Add a Custom Domain on the main worker for `spathismetaforiki.gr` (and `www.`)
+- [ ] Email: verify `spathismetaforiki.gr` in Resend (https://resend.com/domains) — add the SPF, DKIM and DMARC records into Cloudflare DNS
+- [ ] Cloudflare Web Analytics on both zones (one-click enable)
 - [ ] Submit sitemap to Google Search Console (primary only — EMD is non-canonical)
 - [ ] Test on real devices (iOS Safari, Android Chrome)
 
