@@ -1,45 +1,33 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { Truck, Container, ArrowRight, Anchor } from 'lucide-react';
-import { useTranslations } from 'next-intl';
+import { ArrowRight } from 'lucide-react';
+import { useLocale, useTranslations } from 'next-intl';
+import { SERVICES } from '@/lib/services-config';
 import { cn } from '@/lib/utils';
 
-const items = [
-  {
-    key: 'fullLoads',
-    icon: Truck,
-    span: 'lg:col-span-2',
-    accent: 'from-[#c8102e]/10 via-transparent to-transparent',
-  },
-  {
-    key: 'containers',
-    icon: Container,
-    span: 'lg:col-span-1',
-    accent: 'from-[#190602]/8 via-transparent to-transparent',
-  },
-  {
-    key: 'haulage',
-    icon: Anchor,
-    span: 'lg:col-span-3',
-    accent: 'from-[#d0984f]/10 via-transparent to-transparent',
-  },
-] as const;
+const layout: Record<string, { span: string; accent: string }> = {
+  fullLoads: { span: 'lg:col-span-2', accent: 'from-[#c8102e]/10 via-transparent to-transparent' },
+  containers: { span: 'lg:col-span-1', accent: 'from-[#190602]/8 via-transparent to-transparent' },
+  haulage: { span: 'lg:col-span-3', accent: 'from-[#d0984f]/10 via-transparent to-transparent' },
+};
 
 export function Services() {
   const t = useTranslations('Services');
+  const locale = useLocale();
+  const localePrefix = locale === 'el' ? '' : `/${locale}`;
 
   return (
     <section id="services" className="relative bg-surface py-24 sm:py-32">
       <div className="mx-auto max-w-7xl px-4">
         <SectionHeader eyebrow={t('eyebrow')} title={t('title')} subtitle={t('subtitle')} />
         <div className="mt-14 grid gap-4 lg:grid-cols-3">
-          {items.map((item, i) => {
-            const Icon = item.icon;
+          {SERVICES.map(({ slug, msgKey, icon: Icon }, i) => {
+            const item = layout[msgKey];
             return (
               <motion.a
-                key={item.key}
-                href="#contact"
+                key={slug}
+                href={`${localePrefix}/services/${slug}`}
                 initial={{ opacity: 0, y: 22 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: '-80px' }}
@@ -54,9 +42,9 @@ export function Services() {
                   <Icon className="h-5 w-5" />
                 </div>
                 <div className="mt-12">
-                  <h3 className="text-2xl font-bold tracking-tight text-ink">{t(`${item.key}Title`)}</h3>
+                  <h3 className="text-2xl font-bold tracking-tight text-ink">{t(`${msgKey}Title`)}</h3>
                   <p className="mt-3 max-w-md text-base leading-relaxed text-muted-foreground">
-                    {t(`${item.key}Desc`)}
+                    {t(`${msgKey}Desc`)}
                   </p>
                 </div>
                 <div className="mt-8 inline-flex items-center gap-2 text-sm font-semibold text-ink">

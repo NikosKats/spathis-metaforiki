@@ -42,6 +42,93 @@
     "haulageDesc": "Tractor haulage services for heavy or specialised loads. Modern equipment, experienced drivers.",
     "learnMore": "Learn more"
   },
+  "ServicesIndex": {
+    "eyebrow": "Services",
+    "title": "A full range of freight services for Kefalonia",
+    "subtitle": "Pick the service that fits — we handle anything from a single pallet to a full container load."
+  },
+  "ServiceDetail": {
+    "fullLoadsEyebrow": "Full loads",
+    "fullLoadsTitle": "Full loads (FTL) to and from Kefalonia",
+    "fullLoadsSubtitle": "Exclusive use of a truck for your shipment. Ideal for large volumes, sensitive or high-value freight.",
+    "fullLoadsIncludesTitle": "What's included",
+    "fullLoadsIncludes": [
+      "Exclusive use of a truck",
+      "Pickup from any point in mainland Greece",
+      "Coordinating the ferry crossing to Kefalonia",
+      "Delivery to your nominated address on the island",
+      "Cargo insurance available on request",
+      "Signed proof of delivery"
+    ],
+    "fullLoadsIdealTitle": "Ideal for",
+    "fullLoadsIdeal": [
+      "Wholesale orders",
+      "Restaurant and shop fit-outs",
+      "Construction materials for projects on the island",
+      "Hotel and tourism equipment"
+    ],
+
+    "containersEyebrow": "Containers",
+    "containersTitle": "Container transport to and from Kefalonia",
+    "containersSubtitle": "Coordinating from/to the port, transporting standard container types, and delivering to the final destination.",
+    "containersIncludesTitle": "What's included",
+    "containersIncludes": [
+      "Container pickup from Piraeus, Patras, Thessaloniki",
+      "20', 40', and 40' HC containers",
+      "Coordination with the port and shipping line",
+      "Transport to the final destination in Kefalonia",
+      "Empty container return on agreement",
+      "Customs clearance arranged on request"
+    ],
+    "containersIdealTitle": "Ideal for",
+    "containersIdeal": [
+      "Importers shipping into the island",
+      "Relocation projects",
+      "Logistics partners with end-receivers in Kefalonia",
+      "Non-EU shipments"
+    ],
+
+    "haulageEyebrow": "Tractor haulage",
+    "haulageTitle": "Tractor haulage for heavy and oversized loads",
+    "haulageSubtitle": "Modern equipment for transports that require tractor units — heavy machinery, vehicles, oversized structures.",
+    "haulageIncludesTitle": "What's included",
+    "haulageIncludes": [
+      "Tractor units and specialised platforms",
+      "Special transport permits where required",
+      "Coordinating timings with the port",
+      "Certified, experienced drivers",
+      "Loading and unloading handled by us",
+      "Cargo insurance available on request"
+    ],
+    "haulageIdealTitle": "Ideal for",
+    "haulageIdeal": [
+      "Heavy construction machinery",
+      "Vehicles for trade",
+      "Boats and trailers",
+      "Special structures, oversized loads"
+    ],
+
+    "back": "Back to services",
+    "ctaTitle": "Got freight that needs moving?",
+    "ctaSubtitle": "Send us the details and we'll come back with a price the same or next business day.",
+    "ctaPrimary": "Get a quote",
+    "ctaSecondary": "Call us"
+  },
+  "About": {
+    "eyebrow": "About us",
+    "title": "A new logistics company, built around Kefalonia",
+    "subtitle": "Spathis Thanasis founded the company on one principle: consistency. Today we connect Kefalonia with mainland Greece, every working day.",
+    "storyTitle": "Our story",
+    "storyP1": "Based in Skala, Kefalonia, with years of hands-on experience moving freight to and from the island, we started Spathis Logistics to deliver what was missing: a reliable service that speaks the language of the local professional.",
+    "storyP2": "We cover the full spectrum — full loads, containers and tractor haulage for heavy freight. Our mission is simple: your cargo gets where it needs to go, when it needs to go, in perfect condition.",
+    "valuesTitle": "Our values",
+    "values": [
+      { "title": "Consistency", "desc": "When we say we'll be there, we're there. No surprises, no excuses." },
+      { "title": "Transparency", "desc": "Clear pricing, no hidden costs. We answer fast and honestly." },
+      { "title": "Local knowledge", "desc": "We know the island, the ports, and the routes better than anyone." },
+      { "title": "Responsibility", "desc": "Every shipment matters. We treat it as if it were our own." }
+    ]
+  },
   "Process": {
     "eyebrow": "How we work",
     "title": "From quote to delivery in 4 steps",
