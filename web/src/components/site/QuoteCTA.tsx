@@ -50,7 +50,7 @@ export function QuoteCTA() {
           className="mt-10 flex flex-wrap items-center justify-center gap-3"
         >
           <a
-            href="#contact"
+            href="/quote"
             className="group inline-flex items-center gap-2 rounded-full bg-white px-7 py-4 text-base font-semibold text-[var(--brand)] shadow-[0_12px_28px_-8px_rgba(0,0,0,0.3)] transition hover:bg-zinc-100"
           >
             {t('primary')}

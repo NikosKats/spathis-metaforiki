@@ -44,7 +44,7 @@ export function SiteHeader() {
           </a>
           <LangSwitcher />
           <a
-            href="#quote"
+            href="/quote"
             className="group inline-flex items-center gap-1.5 rounded-full bg-[var(--brand)] px-4 py-2 text-sm font-semibold text-white shadow-sm transition hover:bg-[var(--brand-strong)]"
           >
             <span className="hidden sm:inline">{t('quote')}</span>

@@ -9,7 +9,7 @@ export function AnnouncementBar() {
         <span className="hidden h-1.5 w-1.5 rounded-full bg-[var(--brand)] sm:inline-block" />
         <span className="text-center text-white/85">{t('text')}</span>
         <a
-          href="#quote"
+          href="/quote"
           className="group hidden items-center gap-1 font-semibold text-white underline-offset-4 hover:underline sm:inline-flex"
         >
           {t('cta')}

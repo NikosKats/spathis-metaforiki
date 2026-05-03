@@ -2,24 +2,18 @@ import { Phone, Mail, MapPin, Clock, MessageCircle } from 'lucide-react';
 import { useTranslations } from 'next-intl';
 import { LogoMark } from './LogoMark';
 
+// LogoMark inverted variant is used in the dark footer.
+
 export function SiteFooter() {
   const t = useTranslations('Footer');
   const tNav = useTranslations('Nav');
 
   return (
-    <footer id="contact" className="bg-ink text-white">
+    <footer className="bg-ink text-white">
       <div className="mx-auto max-w-7xl px-4 py-20">
         <div className="grid gap-12 lg:grid-cols-12">
           <div className="lg:col-span-5">
-            <div className="flex items-center gap-2.5 text-white">
-              <div className="flex h-9 w-9 items-center justify-center rounded-full bg-white">
-                <span className="text-[var(--brand)] text-xl font-black leading-none -tracking-tight">Σ</span>
-              </div>
-              <div className="flex flex-col leading-tight">
-                <span className="text-base font-extrabold tracking-tight">ΣΠΑΘΗΣ</span>
-                <span className="text-[10px] font-medium uppercase tracking-[0.18em] text-white/60">Μεταφορική</span>
-              </div>
-            </div>
+            <LogoMark inverted />
             <p className="mt-5 max-w-md text-base leading-relaxed text-white/70">{t('tagline')}</p>
             <ul className="mt-8 space-y-3 text-sm text-white/80">
               <li className="flex items-start gap-3">

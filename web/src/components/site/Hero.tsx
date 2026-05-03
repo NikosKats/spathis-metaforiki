@@ -85,7 +85,7 @@ export function Hero() {
             className="mt-10 flex flex-wrap items-center gap-3"
           >
             <a
-              href="#quote"
+              href="/quote"
               className="group inline-flex items-center gap-2 rounded-full bg-[var(--brand)] px-6 py-3.5 text-base font-semibold text-white shadow-[0_8px_24px_-8px_rgba(200,16,46,0.5)] transition hover:bg-[var(--brand-strong)] hover:shadow-[0_12px_28px_-8px_rgba(200,16,46,0.55)]"
             >
               {t('ctaPrimary')}

@@ -9,6 +9,7 @@ import { Routes } from '@/components/site/Routes';
 import { Stats } from '@/components/site/Stats';
 import { QuoteCTA } from '@/components/site/QuoteCTA';
 import { FAQ } from '@/components/site/FAQ';
+import { ContactSection } from '@/components/site/ContactSection';
 import { SiteFooter } from '@/components/site/SiteFooter';
 
 export default async function HomePage({ params }: PageProps<'/[locale]'>) {
@@ -28,6 +29,7 @@ export default async function HomePage({ params }: PageProps<'/[locale]'>) {
         <Stats />
         <QuoteCTA />
         <FAQ />
+        <ContactSection />
       </main>
       <SiteFooter />
     </>
