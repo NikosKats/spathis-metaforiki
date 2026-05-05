@@ -6,6 +6,16 @@ import { usePathname } from 'next/navigation';
 import { routing } from '@/i18n/routing';
 import { cn } from '@/lib/utils';
 
+// Greek-script labels for both locales (per client request)
+const LABEL: Record<string, string> = {
+  el: 'ΕΛ',
+  en: 'ΑΓ',
+};
+const FULL_LABEL: Record<string, string> = {
+  el: 'Ελληνικά',
+  en: 'Αγγλικά',
+};
+
 export function LangSwitcher({ className }: { className?: string }) {
   const locale = useLocale();
   const pathname = usePathname();
@@ -23,12 +33,14 @@ export function LangSwitcher({ className }: { className?: string }) {
           key={l}
           href={hrefFor(l)}
           aria-current={l === locale ? 'page' : undefined}
+          aria-label={FULL_LABEL[l]}
+          title={FULL_LABEL[l]}
           className={cn(
-            'rounded-full px-2.5 py-1 text-xs font-semibold uppercase tracking-wider transition',
+            'rounded-full px-2.5 py-1 text-xs font-semibold tracking-wider transition',
             l === locale ? 'bg-ink text-white' : 'text-muted-foreground hover:text-ink',
           )}
         >
-          {l}
+          {LABEL[l] ?? l.toUpperCase()}
         </Link>
       ))}
     </div>
