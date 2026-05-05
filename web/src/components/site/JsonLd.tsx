@@ -1,4 +1,4 @@
-const SITE = process.env.NEXT_PUBLIC_SITE_URL ?? 'https://spathismetaforiki.gr';
+const SITE = process.env.NEXT_PUBLIC_SITE_URL ?? 'https://metaforikikefalonias.gr';
 
 function ldScript(data: object) {
   return (

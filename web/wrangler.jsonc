@@ -10,5 +10,13 @@
   },
   "observability": {
     "enabled": true
-  }
+  },
+  "workers_dev": true,
+  // Custom domains — Cloudflare auto-creates DNS records once the zone is active.
+  // Routes attach the moment the metaforikikefalonias.gr zone goes from "pending"
+  // to "active" (after nameservers propagate at the registrar).
+  "routes": [
+    { "pattern": "metaforikikefalonias.gr", "custom_domain": true },
+    { "pattern": "www.metaforikikefalonias.gr", "custom_domain": true }
+  ]
 }

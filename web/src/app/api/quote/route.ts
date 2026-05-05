@@ -1,6 +1,6 @@
 import { NextResponse } from 'next/server';
 import { quoteSchema } from '@/lib/schemas';
-import { createAdminClient } from '@/lib/supabase/admin';
+import { supabaseInsert } from '@/lib/supabase/admin';
 import { getResend, RESEND_FROM, ADMIN_NOTIFICATION_EMAIL } from '@/lib/email/resend';
 import { quoteNotificationEmail, userAutoReplyEmail } from '@/lib/email/templates';
 
@@ -23,31 +23,25 @@ export async function POST(request: Request) {
   }
 
   const userAgent = request.headers.get('user-agent') ?? null;
-  if (process.env.NEXT_PUBLIC_SUPABASE_URL && process.env.SUPABASE_SERVICE_ROLE_KEY) {
-    try {
-      const sb = createAdminClient();
-      await sb.from('quote_requests').insert({
-        name: input.name,
-        email: input.email,
-        phone: input.phone || null,
-        company: input.company || null,
-        cargo_type: input.cargoType,
-        origin: input.origin,
-        destination: input.destination,
-        weight_kg: input.weightKg === '' || input.weightKg === undefined ? null : Number(input.weightKg),
-        volume_m3: input.volumeM3 === '' || input.volumeM3 === undefined ? null : Number(input.volumeM3),
-        pickup_date: input.pickupDate || null,
-        delivery_date: input.deliveryDate || null,
-        notes: input.notes || null,
-        language: input.language,
-        user_agent: userAgent,
-      });
-    } catch (err) {
-      console.error('quote_requests insert failed', err);
-    }
-  } else {
-    console.warn('Supabase not configured — skipping quote_requests insert');
-  }
+  const result = await supabaseInsert('quote_requests', {
+    name: input.name,
+    email: input.email,
+    phone: input.phone || null,
+    company: input.company || null,
+    cargo_type: input.cargoType,
+    origin: input.origin,
+    destination: input.destination,
+    weight_kg:
+      input.weightKg === '' || input.weightKg === undefined ? null : Number(input.weightKg),
+    volume_m3:
+      input.volumeM3 === '' || input.volumeM3 === undefined ? null : Number(input.volumeM3),
+    pickup_date: input.pickupDate || null,
+    delivery_date: input.deliveryDate || null,
+    notes: input.notes || null,
+    language: input.language,
+    user_agent: userAgent,
+  });
+  if (!result.ok) console.warn('quote_requests insert', result.status, result.error);
 
   if (process.env.RESEND_API_KEY) {
     try {
@@ -70,8 +64,6 @@ export async function POST(request: Request) {
     } catch (err) {
       console.error('Resend send failed', err);
     }
-  } else {
-    console.warn('Resend not configured — skipping email notification');
   }
 
   return NextResponse.json({ ok: true });

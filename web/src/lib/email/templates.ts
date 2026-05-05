@@ -19,7 +19,7 @@ const wrap = (title: string, body: string) => `<!doctype html>
           <div style="color:#ffffff;font-size:20px;font-weight:800;margin-top:6px;">${escape(title)}</div>
         </td></tr>
         <tr><td style="padding:32px;">${body}</td></tr>
-        <tr><td style="background:#190602;padding:18px 32px;color:#ffffff80;font-size:12px;text-align:center;">spathismetaforiki.gr · Σκάλα Κεφαλονιάς</td></tr>
+        <tr><td style="background:#190602;padding:18px 32px;color:#ffffff80;font-size:12px;text-align:center;">metaforikikefalonias.gr · Σκάλα Κεφαλονιάς</td></tr>
       </table>
     </td></tr>
   </table>
@@ -35,7 +35,7 @@ const row = (label: string, value: unknown) =>
 
 export function contactNotificationEmail(input: ContactInput) {
   const body = `
-    <div style="font-size:15px;color:#190602b0;margin-bottom:18px;">Νέο μήνυμα από τη φόρμα επικοινωνίας στο spathismetaforiki.gr.</div>
+    <div style="font-size:15px;color:#190602b0;margin-bottom:18px;">Νέο μήνυμα από τη φόρμα επικοινωνίας στο metaforikikefalonias.gr.</div>
     <table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="border-top:1px solid #e7e5e4;">
       ${row('Ονοματεπώνυμο', input.name)}
       ${row('Email', input.email)}
@@ -56,7 +56,7 @@ const cargoLabel = (t: QuoteInput['cargoType']) =>
 
 export function quoteNotificationEmail(input: QuoteInput) {
   const body = `
-    <div style="font-size:15px;color:#190602b0;margin-bottom:18px;">Νέο αίτημα προσφοράς από τη φόρμα του spathismetaforiki.gr.</div>
+    <div style="font-size:15px;color:#190602b0;margin-bottom:18px;">Νέο αίτημα προσφοράς από τη φόρμα του metaforikikefalonias.gr.</div>
     <table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="border-top:1px solid #e7e5e4;">
       ${row('Ονοματεπώνυμο', input.name)}
       ${row('Εταιρεία', input.company)}

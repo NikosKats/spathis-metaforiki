@@ -11,6 +11,6 @@ export function getResend(): Resend {
   return _resend;
 }
 
-export const RESEND_FROM = process.env.RESEND_FROM_EMAIL ?? 'no-reply@spathismetaforiki.gr';
+export const RESEND_FROM = process.env.RESEND_FROM_EMAIL ?? 'no-reply@metaforikikefalonias.gr';
 export const ADMIN_NOTIFICATION_EMAIL =
   process.env.ADMIN_NOTIFICATION_EMAIL ?? 'aspathis@hotmail.gr';

@@ -1,6 +1,6 @@
 import { getPublishedPosts, pickField } from '@/lib/blog';
 
-const SITE = process.env.NEXT_PUBLIC_SITE_URL ?? 'https://spathismetaforiki.gr';
+const SITE = process.env.NEXT_PUBLIC_SITE_URL ?? 'https://metaforikikefalonias.gr';
 
 const escape = (s: string) =>
   s

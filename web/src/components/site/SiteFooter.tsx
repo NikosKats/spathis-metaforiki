@@ -69,10 +69,10 @@ export function SiteFooter() {
         <div className="mt-16 flex flex-col items-center justify-between gap-4 border-t border-white/10 pt-8 text-sm text-white/50 sm:flex-row">
           <span>© {new Date().getFullYear()} ΣΠΑΘΗΣ — Μεταφορική Κεφαλονιάς. {t('rights')}</span>
           <a
-            href="https://spathismetaforiki.gr"
+            href="https://metaforikikefalonias.gr"
             className="font-mono text-xs uppercase tracking-wider transition hover:text-white"
           >
-            spathismetaforiki.gr
+            metaforikikefalonias.gr
           </a>
         </div>
       </div>

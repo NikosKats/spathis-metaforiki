@@ -2,14 +2,13 @@ import type { MetadataRoute } from 'next';
 import { routing } from '@/i18n/routing';
 import { SERVICES } from '@/lib/services-config';
 
-const SITE = process.env.NEXT_PUBLIC_SITE_URL ?? 'https://spathismetaforiki.gr';
+const SITE = process.env.NEXT_PUBLIC_SITE_URL ?? 'https://metaforikikefalonias.gr';
 
 const STATIC_PATHS = [
   { path: '', priority: 1.0, freq: 'weekly' as const },
   { path: '/services', priority: 0.9, freq: 'monthly' as const },
   { path: '/about', priority: 0.7, freq: 'monthly' as const },
   { path: '/quote', priority: 0.9, freq: 'monthly' as const },
-  { path: '/blog', priority: 0.7, freq: 'weekly' as const },
 ];
 
 export default function sitemap(): MetadataRoute.Sitemap {

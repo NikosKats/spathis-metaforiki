@@ -7,6 +7,19 @@
 create extension if not exists "pgcrypto";
 
 -- ============================================================
+-- admin_users — links Supabase Auth user → admin role
+-- Bootstrap: insert your auth user id here from Supabase dashboard
+-- (Created before is_admin() so the function body's reference resolves.)
+-- ============================================================
+create table if not exists public.admin_users (
+  user_id uuid primary key references auth.users(id) on delete cascade,
+  email text not null,
+  created_at timestamptz not null default now()
+);
+
+alter table public.admin_users enable row level security;
+
+-- ============================================================
 -- Helpers
 -- ============================================================
 create or replace function public.is_admin() returns boolean
@@ -18,18 +31,7 @@ as $$
   );
 $$;
 
--- ============================================================
--- admin_users — links Supabase Auth user → admin role
--- Bootstrap: insert your auth user id here from Supabase dashboard
--- ============================================================
-create table if not exists public.admin_users (
-  user_id uuid primary key references auth.users(id) on delete cascade,
-  email text not null,
-  created_at timestamptz not null default now()
-);
-
-alter table public.admin_users enable row level security;
-
+drop policy if exists "admins can read admin_users" on public.admin_users;
 create policy "admins can read admin_users"
   on public.admin_users for select
   using (public.is_admin());
