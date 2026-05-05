@@ -1,0 +1,11 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "spathis-admin",
+  "main": "src/index.ts",
+  "compatibility_date": "2026-04-01",
+  "observability": { "enabled": true },
+  "workers_dev": true,
+  "routes": [
+    { "pattern": "admin.metaforikikefalonias.gr", "custom_domain": true }
+  ]
+}

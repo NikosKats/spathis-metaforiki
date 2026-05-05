@@ -16,7 +16,8 @@
     "blog": "News",
     "contact": "Contact",
     "quote": "Get a quote",
-    "callNow": "Call now"
+    "callNow": "Call now",
+    "gallery": "Fleet"
   },
   "Hero": {
     "eyebrow": "Kefalonia Logistics",
@@ -113,6 +114,11 @@
     "ctaSubtitle": "Send us the details and we'll come back with a price the same or next business day.",
     "ctaPrimary": "Get a quote",
     "ctaSecondary": "Call us"
+  },
+  "Gallery": {
+    "eyebrow": "Gallery",
+    "title": "See our fleet and transports in action",
+    "subtitle": "Trucks, containers and tractor haulage — to and from Kefalonia."
   },
   "Blog": {
     "eyebrow": "News",
@@ -263,6 +269,6 @@
   },
   "LangSwitcher": {
     "el": "Ελληνικά",
-    "en": "Αγγλικά"
+    "en": "English"
   }
 }
