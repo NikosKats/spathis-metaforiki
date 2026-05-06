@@ -66,35 +66,57 @@ function SigmaArrowDisc({
   mark: string;
   className?: string;
 }) {
+  // If the client provides a real raster logo at /public/logo-mark.png it
+  // will overlay (and fully cover) the inline SVG fallback. When the file
+  // doesn't exist the onError handler hides the broken <img> and the SVG
+  // shows through. Drop both `/logo-mark.png` and `/logo-mark-light.png`
+  // (or just one) into web/public to override.
   return (
-    <svg
-      viewBox="0 0 100 100"
-      xmlns="http://www.w3.org/2000/svg"
-      className={cn('block w-full', className)}
-      aria-hidden="true"
-    >
+    <div className={cn('relative aspect-square w-full', className)}>
+      <img
+        src="/logo-mark.png"
+        alt=""
+        aria-hidden="true"
+        className="absolute inset-0 h-full w-full object-contain"
+        onError={(e) => {
+          (e.currentTarget as HTMLImageElement).style.display = 'none';
+        }}
+      />
+      <svg
+        viewBox="0 0 100 100"
+        xmlns="http://www.w3.org/2000/svg"
+        className="block h-full w-full"
+        aria-hidden="true"
+      >
       <circle cx="50" cy="50" r="50" fill={disc} />
+      {/* Refined Σ-as-double-arrow path:
+          - Upper bar (x ≈ 17 → 60) + right-pointing chevron (extends to x ≈ 82)
+          - Diagonal slope from top-bar's right end down-left to bottom-bar's left
+          - Lower bar mirrors upper (x ≈ 17 → 60 + chevron to x ≈ 82)
+          - Chevron has a 4px stepped flange (taller than the body), matching
+            the chunky look of the original mark. */}
       <path
         d="
-          M 22 28
-          L 56 28
-          L 56 22
-          L 78 38
-          L 56 46
-          L 56 41
-          L 39 41
-          L 22 60
-          L 56 60
-          L 56 55
-          L 78 62
-          L 56 78
-          L 56 72
-          L 22 72
+          M 17 27
+          L 58 27
+          L 58 22
+          L 82 36
+          L 58 44
+          L 58 39
+          L 38 39
+          L 17 61
+          L 58 61
+          L 58 56
+          L 82 65
+          L 58 78
+          L 58 73
+          L 17 73
           Z
         "
         fill={mark}
       />
-    </svg>
+      </svg>
+    </div>
   );
 }
 

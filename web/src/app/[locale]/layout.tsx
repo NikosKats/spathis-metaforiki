@@ -4,6 +4,7 @@ import { notFound } from 'next/navigation';
 import type { Metadata } from 'next';
 import { routing } from '@/i18n/routing';
 import { MovingCompanyJsonLd } from '@/components/site/JsonLd';
+import { MobileCTADock } from '@/components/site/MobileCTADock';
 
 export function generateStaticParams() {
   return routing.locales.map((locale) => ({ locale }));
@@ -47,6 +48,7 @@ export default async function LocaleLayout({
     <NextIntlClientProvider locale={locale}>
       <MovingCompanyJsonLd locale={locale as 'el' | 'en'} />
       {children}
+      <MobileCTADock />
     </NextIntlClientProvider>
   );
 }

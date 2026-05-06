@@ -3,6 +3,7 @@ import { getLocale, getTranslations } from 'next-intl/server';
 import Link from 'next/link';
 import { LogoMark } from './LogoMark';
 import { LangSwitcher } from './LangSwitcher';
+import { MobileNav } from './MobileNav';
 import { routing } from '@/i18n/routing';
 
 const PHONE_DISPLAY = '6938 255 178';
@@ -16,7 +17,7 @@ export async function SiteHeader() {
 
   const links = [
     { href: `${prefix}/services`, label: t('services') },
-    { href: `${prefix}/gallery`, label: t('gallery') },
+    { href: `${home}#routes`, label: t('routes') },
     { href: `${prefix}/about`, label: t('about') },
     { href: `${home}#contact`, label: t('contact') },
   ];
@@ -47,15 +48,15 @@ export async function SiteHeader() {
             <span className="hidden xl:inline">{PHONE_DISPLAY}</span>
             <span className="xl:hidden">{t('callNow')}</span>
           </a>
-          <LangSwitcher />
+          <LangSwitcher className="hidden sm:flex" />
           <Link
             href={`${prefix}/quote`}
-            className="group inline-flex items-center gap-1.5 rounded-full bg-[var(--brand)] px-4 py-2 text-sm font-semibold text-white shadow-sm transition hover:bg-[var(--brand-strong)]"
+            className="group hidden items-center gap-1.5 rounded-full bg-[var(--brand)] px-4 py-2 text-sm font-semibold text-white shadow-sm transition hover:bg-[var(--brand-strong)] sm:inline-flex"
           >
-            <span className="hidden sm:inline">{t('quote')}</span>
-            <span className="sm:hidden">{t('callNow')}</span>
+            {t('quote')}
             <ArrowRight className="h-3.5 w-3.5 transition-transform group-hover:translate-x-0.5" />
           </Link>
+          <MobileNav />
         </div>
       </div>
     </header>
