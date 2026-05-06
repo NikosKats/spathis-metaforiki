@@ -2,10 +2,7 @@ import { setRequestLocale } from 'next-intl/server';
 import { AnnouncementBar } from '@/components/site/AnnouncementBar';
 import { SiteHeader } from '@/components/site/SiteHeader';
 import { Hero } from '@/components/site/Hero';
-// BrandLamp temporarily disabled — adds ~12 KiB gzip and pushes the worker
-// over the Cloudflare free 3 MiB cap. Re-enable on paid plan or after
-// further bundle trimming.
-// import { BrandLamp } from '@/components/site/BrandLamp';
+import { BrandLamp } from '@/components/site/BrandLamp';
 import { RouteMarquee } from '@/components/site/RouteMarquee';
 import { Services } from '@/components/site/Services';
 import { Process } from '@/components/site/Process';
@@ -27,6 +24,7 @@ export default async function HomePage({ params }: PageProps<'/[locale]'>) {
       <main className="flex-1">
         <Hero />
         <RouteMarquee />
+        <BrandLamp />
         <Services />
         <Process />
         <Routes locale={locale} />

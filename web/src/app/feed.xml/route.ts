@@ -1,4 +1,4 @@
-import { getPublishedPosts, pickField } from '@/lib/blog';
+import { getPublishedPosts, pickField } from '@/lib/cms';
 
 const SITE = process.env.NEXT_PUBLIC_SITE_URL ?? 'https://metaforikikefalonias.gr';
 

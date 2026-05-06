@@ -8,7 +8,7 @@ import { AnnouncementBar } from '@/components/site/AnnouncementBar';
 import { SiteHeader } from '@/components/site/SiteHeader';
 import { SiteFooter } from '@/components/site/SiteFooter';
 import { BreadcrumbJsonLd } from '@/components/site/JsonLd';
-import { getPostBySlug, pickField, type Locale } from '@/lib/blog';
+import { getPostBySlug, pickField, type Locale } from '@/lib/cms';
 import { routing } from '@/i18n/routing';
 
 export async function generateMetadata({

@@ -17,7 +17,7 @@ export async function SiteHeader() {
 
   const links = [
     { href: `${prefix}/services`, label: t('services') },
-    { href: `${home}#routes`, label: t('routes') },
+    { href: `${prefix}/gallery`, label: t('gallery') },
     { href: `${prefix}/about`, label: t('about') },
     { href: `${home}#contact`, label: t('contact') },
   ];

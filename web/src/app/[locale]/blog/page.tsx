@@ -5,7 +5,7 @@ import { ArrowRight } from 'lucide-react';
 import { AnnouncementBar } from '@/components/site/AnnouncementBar';
 import { SiteHeader } from '@/components/site/SiteHeader';
 import { SiteFooter } from '@/components/site/SiteFooter';
-import { getPublishedPosts, pickField, type Locale } from '@/lib/blog';
+import { getPublishedPosts, pickField, type Locale } from '@/lib/cms';
 import { routing } from '@/i18n/routing';
 
 export async function generateMetadata({ params }: PageProps<'/[locale]/blog'>): Promise<Metadata> {
