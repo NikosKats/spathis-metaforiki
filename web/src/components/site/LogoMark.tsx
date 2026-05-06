@@ -22,8 +22,10 @@ export function LogoMark({
 
   return (
     <div className={cn('flex items-center gap-2.5', className)}>
-      <div className="relative h-9 w-9 flex-shrink-0">
-        <SigmaArrowMark className={cn('h-9 w-9', inverted ? 'text-white' : 'text-ink')} />
+      {/* Bumped from 36px → 52px so the PNG's internal padding doesn't make
+          the visible disc look small next to the wordmark. */}
+      <div className="relative h-13 w-13 flex-shrink-0" style={{ height: 52, width: 52 }}>
+        <SigmaArrowMark className={cn('h-full w-full', inverted ? 'text-white' : 'text-ink')} />
         <PngOverlay src={markSrc} />
       </div>
       {/* PngOverlay only renders if the file exists; otherwise the SVG above shows through. */}
