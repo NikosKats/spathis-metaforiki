@@ -5,7 +5,11 @@
   "compatibility_date": "2026-04-01",
   "observability": { "enabled": true },
   "workers_dev": true,
+  // Path-based route: more specific than the main app's custom-domain
+  // wildcard, so /admin and /admin/* hit this worker while everything else
+  // continues to the Next.js app.
   "routes": [
-    { "pattern": "admin.metaforikikefalonias.gr", "custom_domain": true }
+    { "pattern": "metaforikikefalonias.gr/admin*", "zone_name": "metaforikikefalonias.gr" },
+    { "pattern": "www.metaforikikefalonias.gr/admin*", "zone_name": "metaforikikefalonias.gr" }
   ]
 }
