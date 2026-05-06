@@ -1,9 +1,8 @@
 'use client';
 
 import { Phone, MessageCircle, Mail } from 'lucide-react';
-import { useLocale, useTranslations } from 'next-intl';
+import { useTranslations } from 'next-intl';
 import { Link } from '@/i18n/navigation';
-import { routing } from '@/i18n/routing';
 
 const PHONE_TEL = '+306938255178';
 const WHATSAPP = 'https://wa.me/306938255178';
@@ -16,9 +15,8 @@ const VIBER = 'viber://chat?number=%2B306938255178';
 
 export function MobileCTADock() {
   const t = useTranslations('Nav');
-  const locale = useLocale();
-  const prefix = locale === routing.defaultLocale ? '' : `/${locale}`;
-
+  // next-intl's <Link> auto-prefixes the active locale — pass /quote, not
+  // /el/quote or /en/quote, otherwise we end up with /en/en/quote.
   return (
     <>
       {/* Spacer so page content isn't hidden behind the fixed dock */}
@@ -32,7 +30,7 @@ export function MobileCTADock() {
           <DockBtn href={`tel:${PHONE_TEL}`} icon={Phone} label={t('callNow')} />
           <DockBtn href={WHATSAPP} icon={MessageCircle} label="WhatsApp" external />
           <DockBtn href="mailto:aspathis@hotmail.gr" icon={Mail} label="Email" />
-          <DockBtnLink to={`${prefix}/quote`} label={t('quote')} primary />
+          <DockBtnLink to="/quote" label={t('quote')} primary />
         </div>
       </nav>
     </>

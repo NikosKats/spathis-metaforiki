@@ -3,19 +3,17 @@
 import { useEffect, useState } from 'react';
 import { createPortal } from 'react-dom';
 import { Menu, X, Phone, ArrowRight } from 'lucide-react';
-import { useLocale, useTranslations } from 'next-intl';
+import { useTranslations } from 'next-intl';
 import { Link } from '@/i18n/navigation';
 import { LangSwitcher } from './LangSwitcher';
-import { routing } from '@/i18n/routing';
 import { cn } from '@/lib/utils';
 
 const PHONE_TEL = '+306938255178';
 
 export function MobileNav() {
   const t = useTranslations('Nav');
-  const locale = useLocale();
-  const prefix = locale === routing.defaultLocale ? '' : `/${locale}`;
-  const home = prefix || '/';
+  // next-intl's locale-aware <Link> from @/i18n/navigation auto-prefixes
+  // the current locale, so we pass paths WITHOUT the /el or /en prefix.
   const [open, setOpen] = useState(false);
   const [mounted, setMounted] = useState(false);
 
@@ -40,10 +38,10 @@ export function MobileNav() {
   }, [open]);
 
   const links = [
-    { href: `${prefix}/services`, label: t('services') },
-    { href: `${home}#routes`, label: t('routes') },
-    { href: `${prefix}/about`, label: t('about') },
-    { href: `${home}#contact`, label: t('contact') },
+    { href: '/services', label: t('services') },
+    { href: '/#routes', label: t('routes') },
+    { href: '/about', label: t('about') },
+    { href: '/#contact', label: t('contact') },
   ];
 
   const drawer = open && (
@@ -96,7 +94,7 @@ export function MobileNav() {
                 6938 255 178
               </a>
               <Link
-                href={`${prefix}/quote`}
+                href="/quote"
                 onClick={() => setOpen(false)}
                 className="mt-2 flex w-full items-center justify-center gap-2 rounded-full bg-[var(--brand)] px-5 py-3 text-sm font-semibold text-white shadow-sm transition hover:bg-[var(--brand-strong)]"
               >
