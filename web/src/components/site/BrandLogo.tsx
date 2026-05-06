@@ -1,4 +1,5 @@
 import { cn } from '@/lib/utils';
+import { PngOverlay } from './PngOverlay';
 
 // Refined SVG version of the ΣΠΑΘΗΣ Μεταφορική Κεφαλονιάς logo.
 // Two variants: `light` (dark mark, dark text — for white backgrounds) and
@@ -73,15 +74,6 @@ function SigmaArrowDisc({
   // (or just one) into web/public to override.
   return (
     <div className={cn('relative aspect-square w-full', className)}>
-      <img
-        src="/logo-mark.png"
-        alt=""
-        aria-hidden="true"
-        className="absolute inset-0 h-full w-full object-contain"
-        onError={(e) => {
-          (e.currentTarget as HTMLImageElement).style.display = 'none';
-        }}
-      />
       <svg
         viewBox="0 0 100 100"
         xmlns="http://www.w3.org/2000/svg"
@@ -116,6 +108,7 @@ function SigmaArrowDisc({
         fill={mark}
       />
       </svg>
+      <PngOverlay src="/logo-mark.png" />
     </div>
   );
 }
