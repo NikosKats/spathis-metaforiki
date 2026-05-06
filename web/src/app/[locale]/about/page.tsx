@@ -6,6 +6,7 @@ import { SiteHeader } from '@/components/site/SiteHeader';
 import { SiteFooter } from '@/components/site/SiteFooter';
 import { QuoteCTA } from '@/components/site/QuoteCTA';
 import { Stats } from '@/components/site/Stats';
+import { FullLockup } from '@/components/site/FullLockup';
 import { routing } from '@/i18n/routing';
 
 const valueIcons = [Compass, Eye, MapPinned, Shield];
@@ -36,17 +37,22 @@ export default async function AboutPage({ params }: PageProps<'/[locale]/about'>
       <SiteHeader />
       <main className="flex-1">
         <section className="bg-surface py-20 sm:py-28">
-          <div className="mx-auto max-w-5xl px-4">
-            <div className="inline-flex items-center gap-2 rounded-full border border-border bg-white px-3 py-1 text-xs font-semibold uppercase tracking-wider text-[var(--brand)]">
-              <span className="h-1.5 w-1.5 rounded-full bg-[var(--brand)]" />
-              {t('eyebrow')}
+          <div className="mx-auto grid max-w-6xl gap-12 px-4 lg:grid-cols-12 lg:gap-10">
+            <div className="lg:col-span-7">
+              <div className="inline-flex items-center gap-2 rounded-full border border-border bg-white px-3 py-1 text-xs font-semibold uppercase tracking-wider text-[var(--brand)]">
+                <span className="h-1.5 w-1.5 rounded-full bg-[var(--brand)]" />
+                {t('eyebrow')}
+              </div>
+              <h1 className="mt-5 max-w-3xl text-balance text-4xl font-extrabold leading-[1.05] tracking-tight text-ink sm:text-5xl lg:text-6xl">
+                {t('title')}
+              </h1>
+              <p className="mt-5 max-w-2xl text-pretty text-lg leading-relaxed text-muted-foreground">
+                {t('subtitle')}
+              </p>
             </div>
-            <h1 className="mt-5 max-w-3xl text-balance text-4xl font-extrabold leading-[1.05] tracking-tight text-ink sm:text-5xl lg:text-6xl">
-              {t('title')}
-            </h1>
-            <p className="mt-5 max-w-2xl text-pretty text-lg leading-relaxed text-muted-foreground">
-              {t('subtitle')}
-            </p>
+            <div className="flex justify-center lg:col-span-5 lg:justify-end">
+              <FullLockup width={320} withContact />
+            </div>
           </div>
         </section>
 
