@@ -9,10 +9,6 @@ const STATIC_PATHS = [
   { path: '/services', priority: 0.9, freq: 'monthly' as const },
   { path: '/about', priority: 0.7, freq: 'monthly' as const },
   { path: '/quote', priority: 0.9, freq: 'monthly' as const },
-  { path: '/gallery', priority: 0.6, freq: 'monthly' as const },
-  { path: '/blog', priority: 0.7, freq: 'weekly' as const },
-  { path: '/privacy', priority: 0.3, freq: 'yearly' as const },
-  { path: '/terms', priority: 0.3, freq: 'yearly' as const },
 ];
 
 export default function sitemap(): MetadataRoute.Sitemap {

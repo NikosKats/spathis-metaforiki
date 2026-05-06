@@ -55,13 +55,9 @@ export function SiteFooter() {
               <a href="#quote">{tNav('quote')}</a>
             </FooterCol>
             <FooterCol title={t('company')}>
-              <a href="#">{tNav('about')}</a>
-              <a href="/blog">{tNav('blog')}</a>
+              <a href="/about">{tNav('about')}</a>
+              <a href="/services">{tNav('services')}</a>
               <a href="#contact">{tNav('contact')}</a>
-            </FooterCol>
-            <FooterCol title={t('legal')}>
-              <a href="/privacy">{t('privacy')}</a>
-              <a href="/terms">{t('terms')}</a>
             </FooterCol>
           </div>
         </div>
